@@ -22,6 +22,7 @@
 %   var currnetSDKProductPath = system.getProducts()[0].path
 %   var sdkPath = system.utils.path.join(currnetSDKProductPath + "../../../")
 %   sdkPath = sdkPath.replace(new RegExp('\\' + system.utils.path.sep, 'g'), '/')
+%   var git_submodule = "c2000ware-FreeRTOS/"
 %
 %   var module = system.modules['/kernel/freertos_tool/FREERTOS'];
 %   if (module != null)
@@ -33,9 +34,9 @@
 -I "`freertosPath`\FreeRTOS\Source"
 -I "`freertosPath`\FreeRTOS\Source\include"
 %       } else {
--I "`sdkPath`kernel/FreeRTOS/Source/portable/CCS/C2000_C28x"
--I "`sdkPath`kernel/FreeRTOS/Source/"
--I "`sdkPath`kernel/FreeRTOS/Source/include"
+-I "`sdkPath``git_submodule`kernel/FreeRTOS/Source/portable/CCS/C2000_C28x"
+-I "`sdkPath``git_submodule`kernel/FreeRTOS/Source/"
+-I "`sdkPath``git_submodule`kernel/FreeRTOS/Source/include"
 %       }
 %   }
 %   let keys = Object.keys(system.modules).sort();

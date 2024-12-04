@@ -1,67 +1,69 @@
+const git_module = "c2000ware-FreeRTOS/"
+const free_rtos_source = `../${git_module}kernel/FreeRTOS/Source/`
 var references = [
         {
             name: "TASK",
-            path: "../kernel/FreeRTOS/Source/tasks.c",
+            path: `${free_rtos_source}tasks.c`,
             alwaysInclude: false,
         },
         {
             name: "QUEUE",
-            path: "../kernel/FreeRTOS/Source/queue.c",
+            path: `${free_rtos_source}queue.c`,
             alwaysInclude: false,
         },
         {
             name: "LIST",
-            path: "../kernel/FreeRTOS/Source/list.c",
+            path: `${free_rtos_source}list.c`,
             alwaysInclude: false,
         },
         {
             name: "TIMER",
-            path: "../kernel/FreeRTOS/Source/timers.c",
+            path: `${free_rtos_source}timers.c`,
             alwaysInclude: false,
         },
         {
             name: "EVENTS",
-            path: "../kernel/FreeRTOS/Source/event_groups.c",
+            path: `${free_rtos_source}event_groups.c`,
             alwaysInclude: false,
         },
         {
             name: "SBUFFER",
-            path: "../kernel/FreeRTOS/Source/stream_buffer.c",
+            path: `${free_rtos_source}stream_buffer.c`,
             alwaysInclude: false,
         },
         {
             name: "PORT",
-            path: "../kernel/FreeRTOS/Source/portable/CCS/C2000_C28x/port.c",
+            path: `${free_rtos_source}portable/CCS/C2000_C28x/port.c`,
             alwaysInclude: false,
         },
         {
             name: "PORTASM",
-            path: "../kernel/FreeRTOS/Source/portable/CCS/C2000_C28x/portasm.asm",
+            path: `${free_rtos_source}portable/CCS/C2000_C28x/portasm.asm`,
             alwaysInclude: false,
         },
         {
             name: "HEAP1",
-            path: "../kernel/FreeRTOS/Source/portable/MemMang/heap_1.c",
+            path: `${free_rtos_source}portable/MemMang/heap_1.c`,
             alwaysInclude: false,
         },
         {
             name: "HEAP2",
-            path: "../kernel/FreeRTOS/Source/portable/MemMang/heap_2.c",
+            path: `${free_rtos_source}portable/MemMang/heap_2.c`,
             alwaysInclude: false,
         },
         {
             name: "HEAP3",
-            path: "../kernel/FreeRTOS/Source/portable/MemMang/heap_3.c",
+            path: `${free_rtos_source}portable/MemMang/heap_3.c`,
             alwaysInclude: false,
         },
         {
             name: "HEAP4",
-            path: "../kernel/FreeRTOS/Source/portable/MemMang/heap_4.c",
+            path: `${free_rtos_source}portable/MemMang/heap_4.c`,
             alwaysInclude: false,
         },
         {
             name: "HEAP5",
-            path: "../kernel/FreeRTOS/Source/portable/MemMang/heap_5.c",
+            path: `${free_rtos_source}portable/MemMang/heap_5.c`,
             alwaysInclude: false,
         },
         //
