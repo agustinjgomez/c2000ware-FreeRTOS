@@ -115,6 +115,17 @@ _portTICK_ISR:
   MOV32   *SP++, R7H
   .endif
 
+; Toggle Profiling 2
+;  MOVL      XAR0,#0x100000 ;
+;  MOV32     *(0:0x7f1e),XAR0 ;//toggle
+;  MOV32     *(0:0x7f1a),XAR0 ;// set
+;  MOV32    *(0:0x7f1c),XAR0 ;// clear
+
+  ; Nesting Enable
+  AND IER, #0x1501
+  NOP
+  CLRC INTM
+
   PUSH    DP:ST1
 
 ; Save critical section nesting counter
@@ -219,6 +230,15 @@ SPA_BIT_SET_RESTORE:
   .endif
 
 RESTORE_CONTEXT:
+  ; Nesting End
+  SETC INTM
+
+; Toggle Profiling 2
+;  MOVL      XAR0,#0x100000
+;  MOV32     *(0:0x7f1e),XAR0 ; //toggle
+;  MOV32     *(0:0x7f1a),XAR0 ; // set
+;  MOV32    *(0:0x7f1c),XAR0 ; // clear
+
   .if .TMS320C2800_FPU64 = 1
   MOV32   R7H, *--SP
   MOV32   R7L, *--SP
@@ -291,6 +311,12 @@ _portTICK_ISR:
   MOVL    *SP++, XAR5
   MOVL    *SP++, XAR6
   MOVL    *SP++, XAR7
+
+  ; Nesting Enable
+  AND IER, #0x1501
+  NOP
+  CLRC INTM
+
   PUSH    DP:ST1
 
 ; Save critical section nesting counter
@@ -369,6 +395,9 @@ SPA_BIT_SET_RESTORE:
   MOV     *-SP[24], AR7
 
 RESTORE_CONTEXT:
+  ; Nesting End
+  SETC INTM
+
   MOVL    XAR7, *--SP
   MOVL    XAR6, *--SP
   MOVL    XAR5, *--SP
